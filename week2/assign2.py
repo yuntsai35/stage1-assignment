@@ -57,7 +57,6 @@ def func2(ss, start, end, criteria):
     r=None
     name=None
 
-    #拆解數字跟符號，將數字歸類到c,r,name
     if "c" in criteria:
         c = criteria[3:]
     elif "r" in criteria:
@@ -65,91 +64,113 @@ def func2(ss, start, end, criteria):
     elif "name" in criteria:
         name = criteria[5:]
     
-    #比較跟字典內的大小，選擇符合的且離輸入的數字接近的 
+
     diff_name=""
-    if "c" in criteria and ">=" in criteria:
-        diff=1000
-        for s in ss:
-            if s["c"] >= int(c):
-                numc=abs(s["c"]-int(c))
-                if numc<=diff:
-                    diff=numc
-                    diff_name=s["name"]
-        reserve.append(diff_name)  
-    elif "c" in criteria and "<=" in criteria: 
-        diff=1000
-        for s in ss:
-            if s["c"] <= int(c):
-                numc=abs(s["c"]-int(c))
-                if numc < diff:
-                    diff = numc
-                    diff_name=s["name"]
-        reserve.append(diff_name)
-
-    if "r" in criteria and ">=" in criteria:
-        diff=1000
-        for s in ss:
-            if s["r"] >= float(r):
-                numc=abs(s["r"]-float(r))
-                if numc<=diff:
-                    diff=numc
-                    diff_name=s["name"]
-        reserve.append(diff_name)            
-    elif "r" in criteria and "<=" in criteria: 
-        diff=1000
-        for s in ss:
-            if s["r"] <= float(r):
-                numc=abs(s["r"]-float(r))
-                if numc < diff:
-                    diff = numc
-                    diff_name=s["name"]
-        reserve.append(diff_name)
-
     if "name" in criteria and "=" in criteria:
         diff_name=criteria[5:]
         for s in ss:
             if diff_name == s["name"]:
-             reserve.append(diff_name)            
-   
+             reserve.append(diff_name)
+        time = list(range(start, end+1))
+        if diff_name == "S1":
+            for t in time:
+                if t in s1:
+                    print("Sorry")
+                    return
+            else:
+                s1.extend(time)
+                print("S1")
+                return
+        elif diff_name == "S2":
+            for m in time:
+                if m in s2:
+                    print("Sorry")
+                    return
+            else:
+                s2.extend(time)
+                print("S2")
+                return
+        elif diff_name == "S3":
+            for e in time:
+                if e in s3:
+                    print("Sorry")
+                    return
+            else:
+                s3.extend(time)
+                print("S3")
+                return
+        
+    possible_list=[]
+    if "c" in criteria and ">=" in criteria:
+        for s in ss:
+            if s["c"] >= int(c):
+                possible_list.append((s["name"], abs(s["c"]-int(c))))
+    elif "c" in criteria and "<=" in criteria: 
+        for s in ss:
+            if s["c"] <= int(c):
+                possible_list.append((s["name"], abs(s["c"]-int(c))))
 
-    #將時間分類加入到不同的list做分配，且對照是否有重疊的時間
+    if "r" in criteria and ">=" in criteria:
+        for s in ss:
+            if s["r"] >= float(r):
+                possible_list.append((s["name"], abs(s["r"]-float(r))))     
+    elif "r" in criteria and "<=" in criteria: 
+        for s in ss:
+            if s["r"] <= float(r):
+                possible_list.append((s["name"], abs(s["r"]-float(r))))
+
+    if not possible_list:
+        print("Sorry")
+        return
+
+
     time = list(range(start, end+1))
 
-    if diff_name == "S1":
-        for t in time:
-            if t in s1:
-                print("Sorry")
-                return
-        else:
-            s1.extend(time)
-            print("S1")
-            return
-    elif diff_name == "S2":
-        for m in time:
-            if m in s2:
-                print("Sorry")
-                return
-        else:
-            s2.extend(time)
-            print("S2")
-            return
-    elif diff_name == "S3":
-        for e in time:
-            if e in s3:
-                print("Sorry")
-                return
-        else:
-            s3.extend(time)
-            print("S3")
-            return
+    while possible_list:
+        
+        min_index = 0
+        for i in range(1, len(possible_list)):
+            if possible_list[i][1] < possible_list[min_index][1]:
+                min_index = i
+        diff_name = possible_list[min_index][0]
+        possible_list.remove(possible_list[min_index]) 
 
+        if diff_name == "S1":
+            for t in time:
+                if t in s1:
+                    break  
+            else:
+                s1.extend(time)
+                print("S1")
+                return
+
+        elif diff_name == "S2":
+            for t in time:
+                if t in s2:
+                    break
+            else:
+                s2.extend(time)
+                print("S2")
+                return
+
+        elif diff_name == "S3":
+            for t in time:
+                if t in s3:
+                    break
+            else:
+                s3.extend(time)
+                print("S3")
+                return
+
+    print("Sorry")
+    return
+        
 
 services=[ 
     {"name":"S1", "r":4.5, "c":1000}, 
     {"name":"S2", "r":3, "c":1200}, 
     {"name":"S3", "r":3.8, "c":800} 
 ]
-
 
 func2(services, 15, 17, "c>=800")  # S3 
 func2(services, 11, 13, "r<=4")  # S3 
@@ -158,7 +179,6 @@ func2(services, 15, 18, "r>=4.5")  # S1
 func2(services, 16, 18, "r>=4")  # Sorry 
 func2(services, 13, 17, "name=S1")  # Sorry 
 func2(services, 8, 9, "c<=1500")  # S2
-
 
 #task3
 def func3(index): 
@@ -184,12 +204,10 @@ func3(10)  # print 16
 func3(30)  # print 6
 
 #task4
- #選擇哪個index
 def func4(sp, stat, n): 
-    stat_list=[] #拆解stat
+    stat_list=[] 
     stat_list.extend(list(stat))
     
-    #尋找0的位置
     list_index=[] 
     tag=0
 
@@ -199,7 +217,6 @@ def func4(sp, stat, n):
             list_index.append(tag)
         tag +=1
 
-    #選取可以乘坐車廂的數字
     sp_list=[]
     for i in list_index:
         sp_list.append(sp[i])
