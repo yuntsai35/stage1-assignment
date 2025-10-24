@@ -223,7 +223,7 @@ func2(services, 15, 18, "r>=4.5");  // S1
 func2(services, 16, 18, "r>=4");  // Sorry 
 func2(services, 13, 17, "name=S1");  // Sorry 
 func2(services, 8, 9, "c<=1500");  // S2 
-func2(services, 8, 9, "c<=1500");  //S1
+
 
 //task3
 function func3(index){ 
@@ -287,4 +287,5 @@ function func4(sp, stat, n){
 func4([3, 1, 5, 4, 3, 2], "101000", 2);  // print 5 
 func4([1, 0, 5, 1, 3], "10100", 4);  // print 4 
 func4([4, 6, 5, 8], "1000", 4);  // print 2
+
 
