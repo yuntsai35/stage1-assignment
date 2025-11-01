@@ -27,9 +27,11 @@ for c in clist1:
 
 for a in clist1:
     if "區" in a["地址"]:
+        b = a["地址"].rfind("區")
+        a["地址"] = a["地址"][b + 1:]
+    if "區" in a["地址"]:
         b = a["地址"].find("區")
         a["地址"] = a["地址"][b + 1:]
-    
     if "road" in a["address"].lower():
         e = a["address"].lower().find("road")
         a["address"]=a["address"][:e+4]
@@ -50,6 +52,7 @@ with open("hotels.csv", mode="r", encoding="utf-8") as file:
     reader = csv.reader(file)
     for r in reader:
         print(", ".join(r))
+
 
 
 
