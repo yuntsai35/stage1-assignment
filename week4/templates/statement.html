@@ -1,0 +1,24 @@
+ <!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>My test page</title>
+    <link href="/static/week4.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+        <div class="top">
+          {{header_text}}
+        </div>
+    </header>
+    <div class="content">
+      <div class="title">{{statement_content}}</div>
+        {% if success %}
+        <a href="/logout">登出系統</a>
+        {% endif %}
+        {% if found %}
+        <a href="/logout">返回首頁</a>
+        {% endif %}
+    </div>
+  </body>
+</html>

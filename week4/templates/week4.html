@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>My test page</title>
+    <link href="/static/week4.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+        <div class="top">
+            歡迎光臨，請輸入信箱密碼
+        </div>
+    </header>
+    <div class="content">
+      <div class="title">登入系統</div> 
+        <form action="login" method="post">
+          <div class="row"> 
+            <div class="text">信箱</div>
+            <input type="text" name="username">
+          </div>
+          
+          <div class="row">
+            <div class="text">密碼</div>
+            <input type="password" name="password">
+          </div>
+          
+          同意條款<input class="checkbox" id="checkbox" type="checkbox" name="checkbox">
+          <br>
+          <input class="button" onclick=myFunction() type="submit" value="登入">
+        </form>
+        <hr>
+        <form>
+          <div class="hotel">取得旅館資訊</div>
+          <div class="row"> 
+            <div class="text">編號</div>
+            <input type="text" name="number" id="hotel_id">
+          </div>
+          <input class="information" id="information" onclick=positivenumber() type="button" value="取得">
+
+        </form>
+
+    </div>
+  <script src="{{ url_for('static', path='week4.js') }}"></script>
+  </body>
+</html>
