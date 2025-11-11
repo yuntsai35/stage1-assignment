@@ -7,3 +7,5 @@ Task2
 <img width="1937" height="135" alt="image" src="https://github.com/user-attachments/assets/c2362124-ed8c-481a-bd97-5d92003b2c7c" />
 <img width="1675" height="415" alt="image" src="https://github.com/user-attachments/assets/36a2177d-8db8-409f-a79b-c857eb11f452" />
 
+Task3
+-----
