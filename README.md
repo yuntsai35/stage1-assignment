@@ -10,20 +10,21 @@ Task2
 Task3
 -----
 1. INSERT INTO member(name,email, password) VALUES ('test','test@test.com','test');
+   
 <img width="1403" height="488" alt="image" src="https://github.com/user-attachments/assets/1d5a3dca-2a5c-42f2-a319-17da0fb2f39e" />
-2. SELECT *FROM member;
+3. SELECT *FROM member;
 <img width="1609" height="412" alt="image" src="https://github.com/user-attachments/assets/5c968caf-5942-452e-89a6-05c9acbd5372" /> 
-3. SELECT *FROM member ORDER BY time DESC;
+4. SELECT *FROM member ORDER BY time DESC;
 <img width="1613" height="419" alt="image" src="https://github.com/user-attachments/assets/75c673d3-d001-4f6b-a154-9c73e17fbe6a" />
-4. SELECT * FROM member ORDER BY time DESC limit 3;
+5. SELECT * FROM member ORDER BY time DESC limit 3;
 <img width="1779" height="331" alt="image" src="https://github.com/user-attachments/assets/5fac43dd-7392-4a5b-b5b5-9a019819f9b2" />
-5. SELECT * FROM member WHERE email='test@test.com';
+6. SELECT * FROM member WHERE email='test@test.com';
 <img width="1776" height="260" alt="image" src="https://github.com/user-attachments/assets/ffd671d4-7509-4b76-8259-179c5a39ba20" />
-6. SELECT * FROM member WHERE name LIKE '%es%';
+7. SELECT * FROM member WHERE name LIKE '%es%';
 <img width="1668" height="270" alt="image" src="https://github.com/user-attachments/assets/f5dcefe6-cf7c-456e-a809-eabfe738d38c" />
-7. SELECT * FROM member WHERE email='test@test.com' and password='test';
+8. SELECT * FROM member WHERE email='test@test.com' and password='test';
 <img width="2153" height="261" alt="image" src="https://github.com/user-attachments/assets/d7902617-3d50-4f40-8490-2f8b80ce665a" />
-8. UPDATE * FROM member WHERE 
+9. UPDATE * FROM member WHERE 
 UPDATE member SET name = 'test2' WHERE email='test@test.com';
 <img width="2009" height="561" alt="image" src="https://github.com/user-attachments/assets/c7381c75-4237-4d90-bb4b-c2e1edfb7c94" />
 
@@ -44,4 +45,12 @@ task5
 -----
 1. CREATE TABLE message (id INT UNSIGNED NOT NULL AUTO_INCREMENT, member_id INT UNSIGNED NOT NULL, content VARCHAR(65535) NOT NULL, like_count INT UNSIGNED NOT NULL DEFAULT 0, time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (id), FOREIGN KEY (member_id) REFERENCES member(id));
 <img width="2319" height="566" alt="image" src="https://github.com/user-attachments/assets/046fede8-79dc-4c46-a00c-7469b4028f6e" />
+2.SELECT message.id, member.name, message.member_id, message.content, message.like_count, message.time From member Inner Join message on message.member_id = member.id;
+<img width="2831" height="482" alt="image" src="https://github.com/user-attachments/assets/00de2ba1-9a03-46e4-81ea-935624a1c1d6" />
+3. SELECT message.id, member.name, message.member_id, message.content, message.like_count, message.time From member Inner Join message on message.member_id = member.id WHERE member.email = 'test@test.com';
+<img width="2836" height="301" alt="image" src="https://github.com/user-attachments/assets/802cb1c5-dde7-4b5f-a628-c6e28a479751" />
+4. SELECT AVG(message.like_count) FROM member INNER JOIN message ON member.id = message.member_id WHERE member.email = 'test@test.com';
+<img width="2836" height="303" alt="image" src="https://github.com/user-attachments/assets/f11cc6ec-64cd-4597-9a25-8d16480eec8d" />
+5. SELECT member.email, AVG(message.like_count) FROM member INNER JOIN message ON member.id = message.member_id GROUP BY member.email;
+<img width="2841" height="453" alt="image" src="https://github.com/user-attachments/assets/418f516c-f6ad-47b6-9e64-e75f9d087a27" />
 
