@@ -11,6 +11,7 @@ Task3
 -----
 1. INSERT INTO member(name,email, password) VALUES ('test','test@test.com','test');
 <img width="1403" height="488" alt="image" src="https://github.com/user-attachments/assets/1d5a3dca-2a5c-42f2-a319-17da0fb2f39e" />
-<img width="1392" height="457" alt="image" src="https://github.com/user-attachments/assets/57c6fea8-eacb-40f7-87bf-54dfc4527e2e" />
+<img width="1609" height="412" alt="image" src="https://github.com/user-attachments/assets/5c968caf-5942-452e-89a6-05c9acbd5372" />
+2. 
 
  
