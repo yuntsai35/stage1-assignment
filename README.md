@@ -29,5 +29,5 @@ UPDATE member SET name = 'test2' WHERE email='test@test.com';
 
 task4
 ----
-
+After renewing the follower_count data, the picture below shows the updated chart.
 
