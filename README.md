@@ -30,4 +30,12 @@ UPDATE member SET name = 'test2' WHERE email='test@test.com';
 task4
 ----
 After renewing the follower_count data, the picture below shows the updated chart.
+<img width="1612" height="417" alt="image" src="https://github.com/user-attachments/assets/ba775869-3611-461b-bdeb-8227c91ba58d" />
+1. SELECT COUNT(*) FROM member;
+<img width="1367" height="261" alt="image" src="https://github.com/user-attachments/assets/f3534946-14f9-481c-847f-a92c37a056cd" />
+2. SELECT SUM(follower_count) FROM member;
+<img width="1577" height="264" alt="image" src="https://github.com/user-attachments/assets/fe2e1120-fad9-453d-b285-2e10bf90581c" />
+3. SELECT AVG(follower_count) FROM member;
+<img width="1597" height="274" alt="image" src="https://github.com/user-attachments/assets/64ea5eeb-6e25-437e-bf4f-161c682c3116" />
+4. SELECT AVG(follower_count) FROM member ORDER BY follower_count DESC limit 2;
 
