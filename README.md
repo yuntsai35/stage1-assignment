@@ -37,5 +37,10 @@ After renewing the follower_count data, the picture below shows the updated char
 <img width="1577" height="264" alt="image" src="https://github.com/user-attachments/assets/fe2e1120-fad9-453d-b285-2e10bf90581c" />
 3. SELECT AVG(follower_count) FROM member;
 <img width="1597" height="274" alt="image" src="https://github.com/user-attachments/assets/64ea5eeb-6e25-437e-bf4f-161c682c3116" />
-4. SELECT AVG(follower_count) FROM member ORDER BY follower_count DESC limit 2;
+4. SELECT AVG(follower_count) FROM( SELECT follower_count FROM member ORDER BY follower_count DESC limit 2) AS top2_avg;
+<img width="2287" height="299" alt="image" src="https://github.com/user-attachments/assets/8df44d95-36a3-4de3-a6ec-59042284fb9a" />
+
+task5
+-----
+1. 
 
