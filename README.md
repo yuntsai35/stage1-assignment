@@ -21,9 +21,9 @@ Task3
 <img width="1776" height="260" alt="image" src="https://github.com/user-attachments/assets/ffd671d4-7509-4b76-8259-179c5a39ba20" />
 6. SELECT * FROM member WHERE name LIKE '%es%';
 <img width="1668" height="270" alt="image" src="https://github.com/user-attachments/assets/f5dcefe6-cf7c-456e-a809-eabfe738d38c" />
-8. SELECT * FROM member WHERE email='test@test.com' and password='test';
+7. SELECT * FROM member WHERE email='test@test.com' and password='test';
 <img width="2153" height="261" alt="image" src="https://github.com/user-attachments/assets/d7902617-3d50-4f40-8490-2f8b80ce665a" />
-10. UPDATE * FROM member WHERE 
+8. UPDATE * FROM member WHERE 
 UPDATE member SET name = 'test2' WHERE email='test@test.com';
 <img width="2009" height="561" alt="image" src="https://github.com/user-attachments/assets/c7381c75-4237-4d90-bb4b-c2e1edfb7c94" />
 
