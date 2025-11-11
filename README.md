@@ -42,5 +42,6 @@ After renewing the follower_count data, the picture below shows the updated char
 
 task5
 -----
-1. 
+1. CREATE TABLE message (id INT UNSIGNED NOT NULL AUTO_INCREMENT, member_id INT UNSIGNED NOT NULL, content VARCHAR(65535) NOT NULL, like_count INT UNSIGNED NOT NULL DEFAULT 0, time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (id), FOREIGN KEY (member_id) REFERENCES member(id));
+<img width="2319" height="566" alt="image" src="https://github.com/user-attachments/assets/046fede8-79dc-4c46-a00c-7469b4028f6e" />
 
