@@ -10,7 +10,10 @@ Task2
 Task3
 -----
 1. INSERT INTO member(name,email, password) VALUES ('test','test@test.com','test');
-   
+   INSERT INTO member(name,email, password) VALUES ('rufus','rufus@test.com','abc123');
+   INSERT INTO member(name,email, password) VALUES ('monita','monita@test.com','def456');
+   INSERT INTO member(name,email, password) VALUES ('zoe','zoe@test.com','ghi789');
+   INSERT INTO member(name,email, password) VALUES ('anika','anika@test.com','jkl134');
 <img width="1403" height="488" alt="image" src="https://github.com/user-attachments/assets/1d5a3dca-2a5c-42f2-a319-17da0fb2f39e" />
 3. SELECT *FROM member;
 <img width="1609" height="412" alt="image" src="https://github.com/user-attachments/assets/5c968caf-5942-452e-89a6-05c9acbd5372" /> 
