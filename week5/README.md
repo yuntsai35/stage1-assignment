@@ -19,8 +19,8 @@ Task3
 <img width="1609" height="412" alt="image" src="https://github.com/user-attachments/assets/5c968caf-5942-452e-89a6-05c9acbd5372" /> 
 3. SELECT *FROM member ORDER BY time DESC;
 <img width="1613" height="419" alt="image" src="https://github.com/user-attachments/assets/75c673d3-d001-4f6b-a154-9c73e17fbe6a" />
-4. SELECT * FROM member ORDER BY time DESC limit 3;
-<img width="1779" height="331" alt="image" src="https://github.com/user-attachments/assets/5fac43dd-7392-4a5b-b5b5-9a019819f9b2" />
+4. SELECT * FROM member ORDER BY time DESC limit 1,3;
+<img width="1795" height="350" alt="image" src="https://github.com/user-attachments/assets/b4bce66f-d8c0-4401-b17e-dbbcb0b8365b" />
 5. SELECT * FROM member WHERE email='test@test.com';
 <img width="1776" height="260" alt="image" src="https://github.com/user-attachments/assets/ffd671d4-7509-4b76-8259-179c5a39ba20" />
 6. SELECT * FROM member WHERE name LIKE '%es%';
