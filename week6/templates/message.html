@@ -1,0 +1,38 @@
+ <!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>My test page</title>
+    <link href="/static/week4.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+        <div class="top">
+          歡迎光臨，這是會員頁
+        </div>
+    </header>
+    <div class="content">
+      <div class="title">{{statement_content}}</div>
+        
+        <a href="/logout">登出系統</a>
+        <hr>
+        <div class="title">快來留言吧</div> 
+      <div class="row"> 
+        <div class="text">內容</div>
+        <input type="text" id="createMessage" name="message">
+      </div>
+      <br>
+      <input class="button" onclick="createMessage()" type="button" value="送出">
+      <hr>
+      {% for msg in message %}
+      <div class="row">
+      <div class="hotel" style="display: flex;align-items: center;">{{ msg.name }}:</div><div style="margin-right: 5px; margin-left:5px;"> {{ msg.content }}</div>
+      {% if msg.member_id == current_id %}
+        <button class="delete-btn"  onclick="deleteMessage('{{ msg.id }}')">x</button>
+      {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  <script src="{{ url_for('static', path='week4.js') }}"></script>
+  </body>
+</html>
