@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>My test page</title>
+    <link rel="stylesheet" href="/static/week6.css">
+  </head>
+  <body>
+    <header>
+        <div class="top">
+            歡迎光臨，請註冊登入系統
+        </div>
+    </header>
+    <div class="content">
+    <div class="title">註冊帳號</div> 
+    <div class="row"> 
+        <div class="text">姓名</div>
+        <input type="text" id="signup-name" name="register_name">
+      </div>
+      <div class="row"> 
+        <div class="text">信箱</div>
+        <input type="text" id="signup-email" name="register_username">
+      </div>
+      <div class="row">
+        <div class="text">密碼</div>
+        <input type="password" id="signup-password" name="register_password">
+      </div>
+      <br>
+      <input class="button" onclick="signup()" type="button" value="註冊">
+    <hr>
+    <div class="title">登入系統</div> 
+    <div class="row"> 
+        <div class="text">信箱</div>
+        <input type="text" id="signin-email" name="username">
+      </div>
+      
+      <div class="row">
+        <div class="text">密碼</div>
+        <input type="password" id="signin-password" name="password">
+      </div>
+      <br>
+      <input class="button" onclick="signin()" type="button" value="登入">
+    </div>
+  <script src="{{ url_for('static', path='week6.js') }}"></script>
+  </body>
+</html>
